@@ -86,4 +86,16 @@ And you're right back where you started! Now detach again and run
 $ tmux new -s test-session
 ```
 
-This will create a session called `test-session` that will be started in the current directory. From within `test-session` type `prefix + s` to see all the running `sessions`
+This will create a session called `test-session` that will be started in the current directory. Create some panes and some windows in this session. Detach from the session by pressing `prefix + C-d`.
+
+Now create a new session called `new-horizon`:
+
+```shell
+$ tmux new -s new-horizon
+```
+
+From within the session `new-horizon` type `prefix + s` to see all the running `sessions`, and you can then choose from them with `vim`-keys (`hjkl`) or standard arrowkeys.
+
+![See all sessions](./figures/see-all-sessions.png "See all sessions")
+
+This is how you would separate your projects! The great thing about `tmux` is that when you detach from a session, that session keeps going in the background. This is great if you have a service running for longer than you care to look. It is common to have a `tmux` server running on a remote server, so that when you `ssh` into that server, everything is as you left it.
