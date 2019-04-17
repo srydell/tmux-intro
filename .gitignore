@@ -11,5 +11,7 @@
 !.gitignore
 !.tmux.conf
 !README.md
+!runSL.sh
+
 !figures/
 !presentation/

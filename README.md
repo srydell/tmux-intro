@@ -22,13 +22,22 @@ $ sudo apt install tmux
 
 to install `tmux`.
 
+## Installing on a unix based system ##
+
+Most package managers include `tmux` into their repositories, so to get it for your OS just write
+
+```shell
+# Where INSTALL_CMD is the install command for your OS
+$ sudo ${INSTALL_CMD} tmux
+```
+
 ## How to talk to `tmux` ##
 
-Invoking the `tmux` command will start a new shell within the `tmux server`. You can see it as just another terminal. In a terminal running `bash` a lot of keys have special meaning, `C-r` searches backwards, `C-e` goes to the end of the line etc. Adding a few hundred more commands that `tmux` would listen to would surely result in a clash. To circumvent this problem, `tmux` uses its own `namespace`, much like we do in other programming languages. Only here it's called the `prefix`. `Tmux` does not listen to any keypress, until the `prefix` is pressed, and then it listens to **one** combination. The default `prefix` is `C-b` (holding `Ctrl` and pressing `b`) but using the config provided by this repository, it is `C-a` (I have short fingers).
+Invoking the `tmux` command will start a new shell within the `tmux server`. You can see it as just another terminal. In a terminal running `bash` a lot of keys have special meaning, `C-r` searches backwards, `C-e` goes to the end of the line etc. Adding a few hundred more commands that `tmux` would listen to would surely result in a clash. To circumvent this problem, `tmux` uses its own `namespace`, much like we do in other programming languages. Only here it's called the `prefix`. `Tmux` does not listen to any key press, until the `prefix` is pressed, and then it listens to **one** combination. The default `prefix` is `C-b` (holding `Ctrl` and pressing `b`) but using the config provided by this repository, it is `C-a` (I have short fingers).
 
 ## Installing config from this repository ##
 
-`Tmux` reads the config file `.tmux.conf` in you `$HOME` direcotory (to get there, type `cd` with no argument). If no `$HOME/.tmux.conf` is provided, it uses the system defaults. To install my sample config clone the repo and copy it over write
+`Tmux` reads the config file `.tmux.conf` in you `$HOME` directory (to get there, type `cd` with no argument). If no `$HOME/.tmux.conf` is provided, it uses the system defaults. To install my sample config clone the repo and copy it over write
 
 ```shell
 $ git clone https://github.com/srydell/tmux-intro.git && cd tmux-intro
@@ -89,7 +98,7 @@ Now create a new session called `new-horizon`:
 $ tmux new -s new-horizon
 ```
 
-From within the session `new-horizon` type `prefix + s` to see all the running `sessions`, and you can then choose from them with `vim`-keys (`hjkl`) or standard arrowkeys.
+From within the session `new-horizon` type `prefix + s` to see all the running `sessions`, and you can then choose from them with `vim`-keys (`hjkl`) or standard arrow keys.
 
 ![See all sessions](./figures/see-all-sessions.png "See all sessions")
 
@@ -102,8 +111,12 @@ You can expose the communication socket used between the client and the session 
 ```shell
 # Create the tmux session shared-session with the socket /tmp/shared.sock as user simon
 simon$ tmux -S /tmp/shared.sock new -s shared-session
+# Create a group
+simon$ sudo groupadd sharingGroup
 # Set the group permissions on the socket
 simon$ chgrp sharingGroup /tmp/shared.sock
+# Add bob to the group
+simon$ sudo usermod -a -G sharingGroup bob
 ```
 
 Then from another terminal `bob` joins by typing:
@@ -124,5 +137,5 @@ Unsurprisingly, you can program `tmux` to do whatever you'd like, and there are 
 
 # Further reading #
 
-* [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read) - Good free book to read on the features of `tmux`
-* [tmux man page](man7.org/linux/man-pages/man1/tmux.1.html) - The tmux manual - RTFM
+* [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read) - Good book to read on the features of `tmux`
+* [tmux man page](man7.org/linux/man-pages/man1/tmux.1.html) - The `tmux` manual - RTFM
