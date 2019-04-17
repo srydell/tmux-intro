@@ -27,7 +27,7 @@ to install `tmux`.
 Most package managers include `tmux` into their repositories, so to get it for your OS just write
 
 ```shell
-# Where INSTALL_CMD is the install command for your OS
+# Where INSTALL_CMD is the install command for your OS and package manager
 $ sudo ${INSTALL_CMD} tmux
 ```
 
