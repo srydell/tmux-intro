@@ -30,9 +30,8 @@ Invoking the `tmux` command will start a new shell within the `tmux server`. You
 
 `Tmux` reads the config file `.tmux.conf` in you `$HOME` direcotory (to get there, type `cd` with no argument). If no `$HOME/.tmux.conf` is provided, it uses the system defaults. To install my sample config clone the repo and copy it over write
 
-**TODO**: change the url
 ```shell
-$ git clone ... && cd tmux-intro
+$ git clone https://github.com/srydell/tmux-intro.git && cd tmux-intro
 $ cp .tmux.conf $HOME/.tmux.conf
 ```
 
