@@ -130,7 +130,7 @@ Now they both share the same cursor within the `tmux` session and can see what t
 
 ## The `tmux` interface ##
 
-Unsurprisingly, you can program `tmux` to do whatever you'd like, and there are a lot of plugins around extending `tmux`. Some of the most common are listed below:
+Unsurprisingly, you can program `tmux` to do whatever you'd like, and there are a lot of plugins around extending `tmux`. Some of the most useful (to me) are listed below:
 
 * `tmux-continuum` - Take snapshots of all sessions and store them as `txt` files
 * `tmux-resurrect` - On starting `tmux`, check for `tmux-continuum` snapshots to start (so you'll never loose your work!)
