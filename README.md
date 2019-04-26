@@ -40,11 +40,12 @@ Invoking the `tmux` command will start a new shell within the `tmux server`. You
 `Tmux` reads the config file `.tmux.conf` in you `$HOME` directory (to get there, type `cd` with no argument). If no `$HOME/.tmux.conf` is provided, it uses the system defaults. To install my sample config clone the repo and copy it over write
 
 ```shell
+# Note here that the prepended '$' is a just a way of indicating that it should be typed into a terminal as a normal user (not admin)
 $ git clone https://github.com/srydell/tmux-intro.git && cd tmux-intro
 $ cp .tmux.conf $HOME/.tmux.conf
 ```
 
-I have commented to the best of my ability and you should be able to read most if not everything in that file.
+I have commented to the best of my ability and you should be able to read most if not everything in that file. If not, you can always ask me.
 
 From here on, all shortcuts will be shown using the provided `.tmux.conf`, if you want to use the default you can [read an online cheatsheet](https://tmuxcheatsheet.com) and use the rest of this document as a reference for what you can do.
 
@@ -138,4 +139,4 @@ Unsurprisingly, you can program `tmux` to do whatever you'd like, and there are 
 # Further reading #
 
 * [The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read) - Good book to read on the features of `tmux`
-* [tmux man page](man7.org/linux/man-pages/man1/tmux.1.html) - The `tmux` manual - RTFM
+* [tmux man page](man7.org/linux/man-pages/man1/tmux.1.html) - The `tmux` manual
