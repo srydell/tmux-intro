@@ -7,6 +7,7 @@ The easiest way is to install `tmux` on Windows is using the [git for windows sd
 Once `git-sdk` is installed, open a terminal (usually called `git-bash.exe` in the installed directory) and write
 
 ```shell
+# Note here that the prepended '$' is a just a way of indicating that it should be typed into a terminal as a normal user (not admin)
 $ pacman -S tmux
 ```
 
@@ -40,7 +41,6 @@ Invoking the `tmux` command will start a new shell within the `tmux server`. You
 `Tmux` reads the config file `.tmux.conf` in you `$HOME` directory (to get there, type `cd` with no argument). If no `$HOME/.tmux.conf` is provided, it uses the system defaults. To install my sample config clone the repo and copy it over write
 
 ```shell
-# Note here that the prepended '$' is a just a way of indicating that it should be typed into a terminal as a normal user (not admin)
 $ git clone https://github.com/srydell/tmux-intro.git && cd tmux-intro
 $ cp .tmux.conf $HOME/.tmux.conf
 ```
